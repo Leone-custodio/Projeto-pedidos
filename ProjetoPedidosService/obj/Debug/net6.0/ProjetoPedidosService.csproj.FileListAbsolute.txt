@@ -1,0 +1,17 @@
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosService.deps.json
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosService.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosService.pdb
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosDomain.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosInfra.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosDomain.pdb
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\bin\Debug\net6.0\ProjetoPedidosInfra.pdb
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.csproj.AssemblyReference.cache
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.AssemblyInfoInputs.cache
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.AssemblyInfo.cs
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.csproj.CopyComplete
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\refint\ProjetoPedidosService.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ProjetoPedidosService.pdb
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosService\obj\Debug\net6.0\ref\ProjetoPedidosService.dll
