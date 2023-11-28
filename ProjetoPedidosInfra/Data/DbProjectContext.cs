@@ -1,15 +1,48 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MongoDB.Driver;
 using ProjetoPedidosDomain.Models;
 
 namespace ProjetoPedidosInfra.Data
 {
-    public class DbProjectContext : DbContext
+    public class DbProjectContext 
     {
-        public DbSet<Order>? Orders { get; set; }
-        public DbSet<Product>? Products { get; set; }
-        public DbSet<User>? Users { get; set; }
+        public static string ConnectionString { get; set; }
+        public static string DatabaseName { get; set; }
+        public static bool IsSSL { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("DataSource=app.db;Cache=Shared");
+        private IMongoDatabase _database { get;}
+
+        public DbProjectContext()
+        {
+            try
+            {
+                MongoClientSettings setting = MongoClientSettings
+                    .FromUrl(new MongoUrl(ConnectionString));
+
+                if (IsSSL)
+                {
+                    setting.SslSettings = new SslSettings 
+                    {
+                        EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12
+                    };
+                }
+
+                var mongoClient = new MongoClient(setting);
+                _database = mongoClient.GetDatabase(DatabaseName);
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Erro ao conectar ao banco");
+            }
+        }
+
+        public IMongoCollection<User> Users 
+        {
+            get 
+            {
+                return _database.GetCollection<User>("User");
+            }
+        }
     }
 }
+//mongodb+srv://<admin>:<admin1234>@cluster0.t5uaadn.mongodb.net/?retryWrites=true&w=majority

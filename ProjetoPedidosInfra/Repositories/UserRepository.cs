@@ -1,4 +1,5 @@
-﻿using ProjetoPedidosDomain.Models;
+﻿using MongoDB.Driver;
+using ProjetoPedidosDomain.Models;
 using ProjetoPedidosInfra.Data;
 using ProjetoPedidosInfra.Interfaces;
 
@@ -13,41 +14,33 @@ namespace ProjetoPedidosInfra.Repositories
             _context = context;
         }
 
-        public Task<User> Create(string name, string email, string cpf)
+        public User Create(User user)
         {
-            var user = new User 
-            { 
-                Id = Guid.NewGuid(),
-                Name = name,
-                Email = email,
-                CPF = cpf
-            };
-
-            _context.Users.Add(user);
-            _context.SaveChanges();
-
-            return Task.FromResult(user);
-
+            _context.Users.InsertOne(user);
+            return user;
         }
 
-        public Task<User> Delete(Guid id)
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            _context.Users.FindOneAndDelete(x => x.Id == id);
         }
 
-        public Task<User> GetAll()
+        public List<User> GetAll()
         {
-            throw new NotImplementedException();
+            var users = _context.Users.Find(x => true).ToList();
+            return users;
         }
 
-        public Task<User> GetById(Guid id)
+        public User GetById(string id)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Find(x => x.Id == id).FirstOrDefault();
+            return (User)user;
         }
 
-        public Task<User> Update(Guid id)
+        public User Update(string id, User user)
         {
-            throw new NotImplementedException();
+            _context.Users.ReplaceOne(x => x.Id == id, user);
+            return user;
         }
     }
 }

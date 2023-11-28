@@ -5,6 +5,9 @@ C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosApli
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\ProjetoPedidosAplication.runtimeconfig.json
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\ProjetoPedidosAplication.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\ProjetoPedidosAplication.pdb
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\DnsClient.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -14,6 +17,12 @@ C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosApli
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Snappier.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -21,6 +30,10 @@ C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosApli
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\alpine-arm\native\libe_sqlite3.so
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\alpine-arm64\native\libe_sqlite3.so
 C:\Users\Douglas\Desktop\AreaTrabalho01\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\runtimes\alpine-x64\native\libe_sqlite3.so

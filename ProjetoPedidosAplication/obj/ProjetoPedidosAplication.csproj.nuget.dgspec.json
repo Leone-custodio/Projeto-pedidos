@@ -53,6 +53,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -123,6 +127,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -181,6 +191,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -253,6 +269,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[6.0.25, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
             }
           },
           "imports": [
@@ -320,6 +340,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

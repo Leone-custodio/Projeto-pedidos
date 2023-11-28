@@ -13,31 +13,35 @@ namespace ProjetoPedidosService.Services
             _repository = repository;
         }
 
-        public Task<User> Create(string name, string email, string cpf)
+        public User Create(User user)
         {
-            var user = _repository.Create(name, email, cpf);
+            var result = _repository.Create(user);
+
+            return result;
+        }
+
+        public void Delete(string id)
+        {
+            _repository.Delete(id);
+        }
+
+        public List<User> GetAll()
+        {
+            var list = _repository.GetAll();
+            return list;
+        }
+
+        public User GetById(string id)
+        {
+            User user = _repository.GetById(id);
 
             return user;
         }
 
-        public Task<User> Delete(Guid id)
+        public User Update(string id, User user)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<User> Update(Guid id)
-        {
-            throw new NotImplementedException();
+             _repository.Update(id, user);
+            return user;
         }
     }
 }

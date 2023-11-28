@@ -4,10 +4,10 @@ namespace ProjetoPedidosService.Interfaces
 {
     public interface IUserService
     {
-        Task<User> Create(string name, string email, string cpf);
-        Task<User> GetById(Guid id);
-        Task<User> GetAll();
-        Task<User> Update(Guid id);
-        Task<User> Delete(Guid id);
+        User Create(User user);
+        User GetById(string id);
+        List<User> GetAll();
+        User Update(string id, User user);
+        void Delete(string id);
     }
 }
