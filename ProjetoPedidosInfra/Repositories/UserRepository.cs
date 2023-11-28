@@ -23,8 +23,7 @@ namespace ProjetoPedidosInfra.Repositories
                 CPF = cpf
             };
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            _context.Users.InsertOne(user);
 
             return Task.FromResult(user);
 

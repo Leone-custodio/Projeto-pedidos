@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj": {}
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
         "projectName": "ProjetoPedidosAplication",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,14 +32,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj"
               },
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
               },
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
               }
             }
           }
@@ -53,6 +54,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -77,24 +82,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj",
         "projectName": "ProjetoPedidosBusiness",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
               }
             }
           }
@@ -123,6 +129,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -139,24 +151,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
         "projectName": "ProjetoPedidosDomain",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -181,6 +194,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -197,24 +216,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
         "projectName": "ProjetoPedidosInfra",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,8 +248,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
               }
             }
           }
@@ -253,6 +273,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[6.0.25, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
             }
           },
           "imports": [
@@ -271,24 +295,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
         "projectName": "ProjetoPedidosService",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -302,11 +327,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
               },
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
               }
             }
           }
@@ -320,6 +345,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -336,7 +367,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
