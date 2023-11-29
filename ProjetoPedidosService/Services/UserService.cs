@@ -36,6 +36,12 @@ namespace ProjetoPedidosService.Services
             User user = _repository.GetById(id);
 
             return user;
+        } 
+        public User GetByCpf(string cpf)
+        {
+            User user = _repository.GetByCpf(cpf);
+
+            return user;
         }
 
         public User Update(string id, User user)

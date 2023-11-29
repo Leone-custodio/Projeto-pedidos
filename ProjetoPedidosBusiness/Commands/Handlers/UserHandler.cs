@@ -16,7 +16,6 @@ namespace ProjetoPedidosBusiness.Commands.Handlers
 
         public ICommandResult CreateUser(CreateUserRequest request)
         {
-
             var user = new User()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -25,22 +24,22 @@ namespace ProjetoPedidosBusiness.Commands.Handlers
                 CPF = request.CPF
             };
 
-            try
+            if (CheckCpf(user.CPF) == false)
             {
                 _Service.Create(user);
-            }
-            catch (Exception e)
-            {
 
-                return new CommandResult(false, "O usuário não pode ser nulo", e.Message);
+                return new CommandResult(true, "Usuário cadastrado com sucesso !", new
+                {
+                    user.Id,
+                    user.Name,
+                    user.Email,
+                    user.CPF
+                });
             }
-
-            return new CommandResult(true, "Usuário cadastrado com sucesso !", new
+            else
             {
-                request.Name,
-                request.Email,
-                request.CPF
-            });
+                return new CommandResult(false, $"O cpf {user.CPF} já está em uso no sistema !", false);
+            }
         }
 
         public ICommandResult DeleteUser(string id)
@@ -91,7 +90,7 @@ namespace ProjetoPedidosBusiness.Commands.Handlers
                 user.Name = result.Name;
                 user.Email = result.Email;
                 user.CPF = result.CPF;
-               
+
             }
             catch (Exception e)
             {
@@ -120,6 +119,17 @@ namespace ProjetoPedidosBusiness.Commands.Handlers
             }
 
             return new CommandResult(true, "Usuário atualizado com sucesso !", user);
+        }
+
+        private bool CheckCpf(string cpf)
+        {
+            var result = _Service.GetByCpf(cpf);
+            if (result == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
