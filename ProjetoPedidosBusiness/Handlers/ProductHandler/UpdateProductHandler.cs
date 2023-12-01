@@ -1,0 +1,30 @@
+﻿using MediatR;
+using ProjetoPedidosBusiness.Requests.ProductRequests;
+using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Interfaces;
+
+namespace ProjetoPedidosBusiness.Handlers.ProductHandler
+{
+    public class UpdateProductHandler : IRequestHandler<UpdateProductRequest, object>
+    {
+        private readonly IProductService _service;
+
+        public UpdateProductHandler(IProductService service)
+        {
+            _service = service;
+        }
+
+        public async Task<object> Handle(UpdateProductRequest request, CancellationToken cancellationToken)
+        {
+            var product = new Product()
+            {
+                Id = request.Id,
+                Name = request.Name,
+                Price = request.Price,
+                Category = request.Category
+            };
+            var result = _service.Update(request.Id, product);
+            return await Task.FromResult(result);
+        }
+    }
+}

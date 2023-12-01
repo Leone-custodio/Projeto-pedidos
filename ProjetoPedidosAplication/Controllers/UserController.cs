@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ProjetoPedidosBusiness.Commands.Handlers;
-using ProjetoPedidosBusiness.Commands.Requests;
-using ProjetoPedidosBusiness.Commands.Responses;
-using ProjetoPedidosBusiness.Interfaces;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using ProjetoPedidosBusiness.Handlers;
+using ProjetoPedidosBusiness.Handlers.UserHandler;
+using ProjetoPedidosBusiness.Requests.UserRequests;
 using ProjetoPedidosDomain.Models;
 
 namespace ProjetoPedidosAplication.Controllers
@@ -13,52 +13,62 @@ namespace ProjetoPedidosAplication.Controllers
     {
         [HttpPost]
         [Route("create/{name},{email},{cpf}")]
-        public ICommandResult CreateUser(
+        public Task<object> CreateUser(
             [FromRoute] string name, string email, string cpf,
-            [FromServices] UserHandler handler,
+            [FromServices] IMediator mediator,
             [FromBody] CreateUserRequest request)
         {
             request.Name = name;
             request.Email = email;
             request.CPF = cpf;
 
-            return handler.CreateUser(request);
+            return mediator.Send(request);
         }
 
-        [HttpGet]
+        [HttpOptions]
         [Route("getAllUsers/")]
-        public ICommandResult GetAllUsers(
-            [FromServices] UserHandler handler)
+        public async Task<object> GetAllUsers(
+            [FromServices] IMediator mediator,
+            [FromBody] GetAllUsersRequest request)
         {
-            return handler.GetAllUsers();
+            return await mediator.Send(request);
         }
 
-        [HttpGet]
+        [HttpOptions]
         [Route("getById/{id}")]
-        public ICommandResult GetById(
+        public async Task<object> GetById(
             [FromRoute] string id,
-            [FromServices] UserHandler handler)
+            [FromServices] IMediator mediator,
+            [FromBody] GetByIdRequest request)
         {
-            return handler.GetUserById(id);
+            request.Id = id;
+            return await mediator.Send(request); ;
         }
 
         [HttpPut]
         [Route("update/{id},{name},{email},{cpf}")]
-        public ICommandResult UpdateUser(
+        public Task<object> UpdateUser(
             [FromRoute] string id, string name, string email, string cpf,
-            [FromServices] UserHandler handler)
+            [FromServices] IMediator mediator,
+            [FromBody] UpdateUserRequest request)
         {
-            var user = new User() {Id = id, Name = name, Email = email, CPF = cpf };    
-            return handler.UpadateUser(id, user);
+            request.Id = id;
+            request.Name = name;
+            request.Email = email;
+            request.CPF = cpf;
+
+            return mediator.Send(request);
         }
 
         [HttpDelete]
         [Route("delete/{id}")]
-        public ICommandResult DeleteUser(
-           [FromRoute] string id,
-           [FromServices] UserHandler handler)
+        public async Task<object> Delete(
+            [FromRoute] string id,
+            [FromServices] IMediator mediator,
+            [FromBody] DeleteUserRequest request)
         {
-            return handler.DeleteUser(id);
+            request.Id = id;
+            return await mediator.Send(request); ;
         }
     }
 }

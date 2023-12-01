@@ -1,33 +1,96 @@
 ﻿using ProjetoPedidosDomain.Models;
+using ProjetoPedidosInfra.Interfaces;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosService.Services
 {
     public class ProductService : IProductService
     {
-        public Task<User> Create(User user)
+        private readonly IProductRepository _repository;
+
+        public ProductService(IProductRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
         }
 
-        public Task<User> Delete(Guid id)
+        public CommandResult Create(Product product)
         {
-            throw new NotImplementedException();
+            if (GetProductName(product.Name) == false)
+            {
+                _repository.Create(product);
+
+                return new CommandResult(true, "Produto cadastrado com sucesso!", new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Price,
+                    product.Category
+                });
+            }
+            else
+            {
+                return new CommandResult(false, $"Já existi um cadastro para {product.Name} no sistema !", false);
+            };
         }
 
-        public Task<User> GetAll()
+        public CommandResult Delete(string id)
         {
-            throw new NotImplementedException();
+            var delete = _repository.GetById(id);
+            if (delete == null)
+            {
+                return new CommandResult(false, $"Não existi um cadastro para id {id} no sistema !", false);
+            }
+            else
+            {
+                _repository.Delete(id);
+                return new CommandResult(true, "Produto excluid com sucesso !", true);
+            }
         }
 
-        public Task<User> GetById(Guid id)
+        public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            var list = _repository.GetAll();
+            return list;
         }
 
-        public Task<User> Update(Guid id)
+        public CommandResult GetById(string id)
         {
-            throw new NotImplementedException();
+            var product = _repository.GetById(id);
+
+            if (product == null)
+            {
+                return new CommandResult(false, $"Produto id {id} não está cadastrado no sistema", false);
+            }
+            else
+            {
+                return new CommandResult(true, "Produto encontrado com sucesso !", new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Price,
+                    product.Category
+                });
+            }
+        }
+
+        public Product Update(string id, Product product)
+        {
+            _repository.Update(id, product);
+            return product;
+        }
+
+        private bool GetProductName(string name)
+        {
+            name.ToUpper();
+
+            var searchName = _repository.GetByName(name);
+            if (searchName == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

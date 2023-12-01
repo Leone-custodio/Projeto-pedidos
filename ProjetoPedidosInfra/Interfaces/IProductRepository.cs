@@ -4,10 +4,11 @@ namespace ProjetoPedidosInfra.Interfaces
 {
     public interface IProductRepository
     {
-        Task<Product> Create(Product product);
-        Task<Product> GetById(Guid id);
-        Task<Product> GetAll();
-        Task<Product> Update(Guid id);
-        Task<Product> Delete(Guid id);
+        Product Create(Product product);
+        Product GetById(string id);
+        Product GetByName(string name);
+        List<Product> GetAll();
+        Product Update(string id, Product product);
+        void Delete(string id);
     }
 }

@@ -5,8 +5,8 @@ namespace ProjetoPedidosInfra.Data
 {
     public class DbProjectContext 
     {
-        public static string ConnectionString { get; set; }
-        public static string DatabaseName { get; set; }
+        public static string ConnectionString { get; set; } = "";
+        public static string DatabaseName { get; set; } = "";
         public static bool IsSSL { get; set; }
 
         private IMongoDatabase _database { get;}
@@ -43,6 +43,21 @@ namespace ProjetoPedidosInfra.Data
                 return _database.GetCollection<User>("User");
             }
         }
+
+        public IMongoCollection<Product> Products
+        {
+            get 
+            {
+                return _database.GetCollection<Product>("Product");
+            }
+        }
+
+        public IMongoCollection<Order> Orders
+        {
+            get 
+            {
+                return _database.GetCollection<Order>("Order");
+            }
+        }
     }
 }
-//mongodb+srv://<admin>:<admin1234>@cluster0.t5uaadn.mongodb.net/?retryWrites=true&w=majority

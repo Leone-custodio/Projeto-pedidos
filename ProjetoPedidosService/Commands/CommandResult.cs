@@ -1,6 +1,7 @@
-﻿using ProjetoPedidosBusiness.Interfaces;
+﻿
+using ProjetoPedidosService.Interfaces;
 
-namespace ProjetoPedidosBusiness.Commands.Handlers
+namespace ProjetoPedidosService.Commands
 {
     public class CommandResult : ICommandResult
     {
@@ -13,6 +14,6 @@ namespace ProjetoPedidosBusiness.Commands.Handlers
 
         public bool Success { get; set; }
         public string Message { get; set; }
-        public object? Data { get; set; }
+        public object Data { get; set; }
     }
 }

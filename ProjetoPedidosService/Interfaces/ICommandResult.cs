@@ -1,4 +1,4 @@
-﻿namespace ProjetoPedidosBusiness.Interfaces
+﻿namespace ProjetoPedidosService.Interfaces
 {
     public interface ICommandResult
     {

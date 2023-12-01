@@ -1,14 +1,14 @@
 ﻿using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosService.Interfaces
 {
     public interface IUserService
     {
-        User Create(User user);
-        User GetById(string id);
-        User GetByCpf(string cpf);
+        CommandResult Create(User user);
+        CommandResult GetById(string id);
         List<User> GetAll();
-        User Update(string id, User user);
-        void Delete(string id);
+        CommandResult Update(string id, User user);
+        CommandResult Delete(string id);
     }
 }

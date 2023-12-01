@@ -10,16 +10,13 @@ namespace ProjetoPedidosDomain.Models
         [Display(Name = "Id")]
         public string? Id { get; set; }
 
-
         [Column("Name")]
         [Display(Name = "Name")]
         public string? Name { get; set; }
 
-
         [Column("Email")]
         [Display(Name = "Email")]
         public string? Email { get; set; }
-
 
         [Column("CPF")]
         [Display(Name = "CPF")]

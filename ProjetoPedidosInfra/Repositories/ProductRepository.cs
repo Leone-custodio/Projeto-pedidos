@@ -1,33 +1,54 @@
-﻿using ProjetoPedidosDomain.Models;
+﻿using MongoDB.Driver;
+using ProjetoPedidosDomain.Models;
+using ProjetoPedidosInfra.Data;
 using ProjetoPedidosInfra.Interfaces;
 
 namespace ProjetoPedidosInfra.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public Task<Product> Create(Product product)
+        private readonly DbProjectContext _context;
+
+        public ProductRepository(DbProjectContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Product> Delete(Guid id)
+        public Product Create(Product product)
         {
-            throw new NotImplementedException();
+            product.Name.ToUpper();
+
+            _context.Products.InsertOne(product);
+            return product;
         }
 
-        public Task<Product> GetAll()
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            _context.Products.FindOneAndDelete(x => x.Id == id);
         }
 
-        public Task<Product> GetById(Guid id)
+        public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            var produts = _context.Products.Find(x => true).ToList();
+            return produts;
         }
 
-        public Task<Product> Update(Guid id)
+        public Product GetById(string id)
         {
-            throw new NotImplementedException();
+            var product = _context.Products.Find(x => x.Id == id).FirstOrDefault();
+            return product;
+        }
+
+        public Product GetByName(string name)
+        {
+            var product = _context.Products.Find(x => x.Name == name).FirstOrDefault();
+            return product;
+        }
+
+        public Product Update(string id, Product product)
+        {
+            _context.Products.ReplaceOne(x => x.Id == id, product);
+            return product;
         }
     }
 }

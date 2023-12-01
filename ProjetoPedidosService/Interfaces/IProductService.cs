@@ -1,13 +1,14 @@
 ﻿using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosService.Interfaces
 {
     public interface IProductService
     {
-        Task<User> Create(User user);
-        Task<User> GetById(Guid id);
-        Task<User> GetAll();
-        Task<User> Update(Guid id);
-        Task<User> Delete(Guid id);
+        CommandResult Create(Product product);
+        CommandResult GetById(string id);
+        List<Product> GetAll();
+        Product Update(string id, Product product);
+        CommandResult Delete(string id);
     }
 }
