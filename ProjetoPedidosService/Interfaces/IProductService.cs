@@ -7,7 +7,7 @@ namespace ProjetoPedidosService.Interfaces
     {
         CommandResult Create(Product product);
         CommandResult GetById(string id);
-        List<Product> GetAll();
+        CommandResult GetAll();
         Product Update(string id, Product product);
         CommandResult Delete(string id);
     }

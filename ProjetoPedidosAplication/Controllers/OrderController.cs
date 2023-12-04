@@ -21,5 +21,17 @@ namespace ProjetoPedidosAplication.Controllers
 
             return mediator.Send(request);
         }
+
+        [HttpOptions]
+        [Route("getById/{id}")]
+        public Task<object> GetOrderById(
+            [FromRoute] string id,
+            [FromServices] IMediator mediator,
+            [FromBody] GetOrderByIdRequest request)
+        {
+            request.Id = id;
+            return mediator.Send(request);
+        }
+            
     }
 }

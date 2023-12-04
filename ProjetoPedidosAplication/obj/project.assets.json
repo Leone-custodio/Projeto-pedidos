@@ -2439,24 +2439,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leone\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Douglas\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
+      "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
       "projectName": "ProjetoPedidosAplication",
-      "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
-      "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\obj\\",
+      "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\ProjetoPedidosAplication.csproj",
+      "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosAplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2470,14 +2469,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
-              "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj"
+            "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj": {
+              "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosBusiness\\ProjetoPedidosBusiness.csproj"
             },
-            "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
-              "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
+            "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
+              "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj"
             },
-            "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
-              "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
+            "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj": {
+              "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj"
             }
           }
         }
@@ -2528,7 +2527,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2537,7 +2536,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.2.0 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.2.0 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net6.0"

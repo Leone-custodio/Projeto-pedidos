@@ -44,14 +44,22 @@ namespace ProjetoPedidosService.Services
             else
             {
                 _repository.Delete(id);
-                return new CommandResult(true, "Produto excluid com sucesso !", true);
+                return new CommandResult(true, "Produto excluido com sucesso !", true);
             }
         }
 
-        public List<Product> GetAll()
+        public CommandResult GetAll()
         {
             var list = _repository.GetAll();
-            return list;
+
+            if (list.Count == 0)
+            {
+                return new CommandResult(true, "Não existem produtos cadastrados no sistema no momento!", list);
+            }
+            else
+            {
+                return new CommandResult(true, "Busca completada com sucesso !", list);
+            }
         }
 
         public CommandResult GetById(string id)

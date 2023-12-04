@@ -65,7 +65,13 @@ namespace ProjetoPedidosService.Services
 
         public CommandResult GetById(string id)
         {
-            throw new NotImplementedException();
+            var result = _repository.GetById(id);
+            if(result == null)
+            {
+                return new CommandResult(false, "Ordem não encontrada !", false);
+            }
+
+            return new CommandResult(true, "ordem encontrada com sucesso", result);
         }
 
         public CommandResult Update(string id, Order order)
