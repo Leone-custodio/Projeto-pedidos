@@ -1,33 +1,45 @@
-﻿using ProjetoPedidosDomain.Models;
+﻿using MongoDB.Driver;
+using ProjetoPedidosDomain.Models;
+using ProjetoPedidosInfra.Data;
 using ProjetoPedidosInfra.Interfaces;
 
 namespace ProjetoPedidosInfra.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        public Task<Order> Create(Order order)
+        private readonly DbProjectContext _context;
+        public OrderRepository(DbProjectContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Order> Delete(Guid id)
+        public Order Create(Order order)
         {
-            throw new NotImplementedException();
+            _context.Orders.InsertOne(order);
+            return order;
         }
 
-        public Task<Order> GetAll()
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+           _context.Orders.FindOneAndDelete(x => x.Id == id);
         }
 
-        public Task<Order> GetById(Guid id)
+        public List<Order> GetAll()
         {
-            throw new NotImplementedException();
+            var result = _context.Orders.Find(x => true).ToList();
+            return result;
         }
 
-        public Task<Order> Update(Guid id)
+        public Order GetById(string id)
         {
-            throw new NotImplementedException();
+            var result = _context.Orders.Find(x => x.Id == id).FirstOrDefault();
+            return result;
+        }
+
+        public Order Update(string id, Order order )
+        {
+            _context.Orders.ReplaceOne(x => x.Id == id, order);
+            return order;
         }
     }
 }

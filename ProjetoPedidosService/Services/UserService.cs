@@ -49,16 +49,16 @@ namespace ProjetoPedidosService.Services
             }
         }
 
-        public List<User> GetAll()
+        public CommandResult GetAll()
         {
-            try
+            var result = _repository.GetAll();
+            if (result.Count == 0)
             {
-                var list = _repository.GetAll();
-                return list;
+                return new CommandResult(true, "Não tem usuários cadastrados no sistema no momento", result);
             }
-            catch (Exception e)
+            else 
             {
-                throw new Exception("Erro ao carregar os usuários");
+                return new CommandResult(true, "Busca realizada com sucesso!", result);
             }
         }
 
@@ -66,11 +66,11 @@ namespace ProjetoPedidosService.Services
         {
             var user = _repository.GetById(id);
 
-            if(user == null)
+            if (user == null)
             {
-                return new CommandResult(false,$"Usuário id {id} não existe no banco de dados !", false);
+                return new CommandResult(false, $"Usuário id {id} não existe no banco de dados !", false);
             }
-            else 
+            else
             {
                 return new CommandResult(true, "Usuário encontrado com sucesso!", new
                 {

@@ -1,6 +1,8 @@
 using MediatR;
+using ProjetoPedidosBusiness.Handlers.OrderHandler;
 using ProjetoPedidosBusiness.Handlers.ProductHandler;
 using ProjetoPedidosBusiness.Handlers.UserHandler;
+using ProjetoPedidosBusiness.Requests.OrderRequests;
 using ProjetoPedidosBusiness.Requests.ProductRequests;
 using ProjetoPedidosBusiness.Requests.UserRequests;
 using ProjetoPedidosInfra.Data;
@@ -8,7 +10,6 @@ using ProjetoPedidosInfra.Interfaces;
 using ProjetoPedidosInfra.Repositories;
 using ProjetoPedidosService.Interfaces;
 using ProjetoPedidosService.Services;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,14 +21,15 @@ DbProjectContext.IsSSL = Convert.ToBoolean(builder.Configuration.GetSection("Mon
 
 // Add services to the container.
 
-//builder.Services.AddMediatR(typeof(CreateUserHandler).GetTypeInfo().Assembly, typeof(CreateUserRequest).GetTypeInfo().Assembly);
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetAllUsersHandler).Assembly, typeof(GetAllUsersRequest).Assembly));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ProductHandler).Assembly, typeof(CreateProductRequest).Assembly));
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetAllProductHandler).Assembly, typeof(GetAllProductRequest).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateOrderHandler).Assembly, typeof(CreateOrderRequest).Assembly));
 builder.Services.AddScoped<DbProjectContext>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();

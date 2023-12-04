@@ -4,10 +4,10 @@ namespace ProjetoPedidosInfra.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<Order> Create(Order order);
-        Task<Order> GetById(Guid id);
-        Task<Order> GetAll();
-        Task<Order> Update(Guid id);
-        Task<Order> Delete(Guid id);
+        Order Create(Order order);
+        Order GetById(string id);
+        List<Order> GetAll();
+        Order Update(string id, Order order);
+        void Delete(string id);
     }
 }

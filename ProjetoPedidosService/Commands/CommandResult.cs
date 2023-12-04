@@ -1,5 +1,4 @@
-﻿
-using ProjetoPedidosService.Interfaces;
+﻿using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosService.Commands
 {

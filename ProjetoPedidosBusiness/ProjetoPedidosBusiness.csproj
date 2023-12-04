@@ -16,9 +16,4 @@
     <ProjectReference Include="..\ProjetoPedidosService\ProjetoPedidosService.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handlers\OrderHandler\" />
-    <Folder Include="Requests\OrderRequests\" />
-  </ItemGroup>
-
 </Project>

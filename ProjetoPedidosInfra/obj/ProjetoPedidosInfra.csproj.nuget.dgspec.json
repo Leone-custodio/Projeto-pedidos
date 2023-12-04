@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {}
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
         "projectName": "ProjetoPedidosDomain",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,24 +73,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
+    "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+        "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
         "projectName": "ProjetoPedidosInfra",
-        "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
-        "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
+        "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+        "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +105,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
-                "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
+              "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+                "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
               }
             }
           }
@@ -158,7 +160,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

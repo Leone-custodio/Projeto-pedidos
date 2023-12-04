@@ -59,8 +59,8 @@ namespace ProjetoPedidosAplication.Controllers
             return mediator.Send(request);
         }
 
-        [HttpOptions]
-        [Route("getByIdProducts/{id}")]
+        [HttpDelete]
+        [Route("delete/{id}")]
         public Task<object> DeleteProduct(
             [FromRoute] string id,
             [FromServices] IMediator mediator,
