@@ -16,7 +16,6 @@ namespace ProjetoPedidosInfra.Repositories
 
         public Product Create(Product product)
         {
-            product.Name.ToUpper();
 
             _context.Products.InsertOne(product);
             return product;

@@ -18,6 +18,8 @@ namespace ProjetoPedidosService.Services
         {
             if (GetProductName(product.Name) == false)
             {
+                product.Name = ToUperName(product.Name);
+
                 _repository.Create(product);
 
                 return new CommandResult(true, "Produto cadastrado com sucesso!", new
@@ -28,10 +30,8 @@ namespace ProjetoPedidosService.Services
                     product.Category
                 });
             }
-            else
-            {
-                return new CommandResult(false, $"Já existi um cadastro para {product.Name} no sistema !", false);
-            };
+
+            return new CommandResult(false, $"Já existi um cadastro para {product.Name} no sistema !", false);
         }
 
         public CommandResult Delete(string id)
@@ -41,11 +41,9 @@ namespace ProjetoPedidosService.Services
             {
                 return new CommandResult(false, $"Não existi um cadastro para id {id} no sistema !", false);
             }
-            else
-            {
-                _repository.Delete(id);
-                return new CommandResult(true, "Produto excluido com sucesso !", true);
-            }
+
+            _repository.Delete(id);
+            return new CommandResult(true, "Produto excluido com sucesso !", true);
         }
 
         public CommandResult GetAll()
@@ -56,10 +54,8 @@ namespace ProjetoPedidosService.Services
             {
                 return new CommandResult(true, "Não existem produtos cadastrados no sistema no momento!", list);
             }
-            else
-            {
-                return new CommandResult(true, "Busca completada com sucesso !", list);
-            }
+
+            return new CommandResult(true, "Busca completada com sucesso !", list);
         }
 
         public CommandResult GetById(string id)
@@ -70,35 +66,46 @@ namespace ProjetoPedidosService.Services
             {
                 return new CommandResult(false, $"Produto id {id} não está cadastrado no sistema", false);
             }
-            else
+
+            return new CommandResult(true, "Produto encontrado com sucesso !", new
             {
-                return new CommandResult(true, "Produto encontrado com sucesso !", new
-                {
-                    product.Id,
-                    product.Name,
-                    product.Price,
-                    product.Category
-                });
-            }
+                product.Id,
+                product.Name,
+                product.Price,
+                product.Category
+            });
         }
 
-        public Product Update(string id, Product product)
+        public CommandResult Update(string id, Product product)
         {
+            var update = _repository.GetById(id);
+            if (update == null)
+            {
+                return new CommandResult(false, $"Produto id {id} não existe no sistema !", false);
+            }
+
+            product.Name = ToUperName(product.Name);
+
             _repository.Update(id, product);
-            return product;
+
+            return new CommandResult(true, "Produto atualizado com sucesso !", product);
         }
 
         private bool GetProductName(string name)
         {
-            name.ToUpper();
-
-            var searchName = _repository.GetByName(name);
+            var searchName = _repository.GetByName(ToUperName(name));
             if (searchName == null)
             {
                 return false;
             }
 
             return true;
+        }
+
+        private string ToUperName(string name)
+        {
+            var toUpperName = name.ToUpper();
+            return toUpperName;
         }
     }
 }

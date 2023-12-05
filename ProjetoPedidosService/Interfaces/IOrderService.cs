@@ -6,9 +6,10 @@ namespace ProjetoPedidosService.Interfaces
     public interface IOrderService
     {
         CommandResult Create(string productName, string userCpf);
+        CommandResult InsertProductOrder(string id, string productName);
+        CommandResult RemoveProductOrder(string id, string productName);
         CommandResult GetById(string id);
         CommandResult GetAll();
-        CommandResult Update(string id, Order order);
-        void Delete(string id);
+        CommandResult Delete(string id);
     }
 }
