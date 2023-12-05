@@ -1,9 +1,0 @@
-{
-    "sqlite.databaseExtensions": [
-        "db3",
-        "sdb",
-        "s3db",
-        "sqlite",
-        "sqlite3"
-    ]
-}
