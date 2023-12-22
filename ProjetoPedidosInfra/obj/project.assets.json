@@ -2012,23 +2012,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Douglas\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Leone\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+      "projectUniqueName": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
       "projectName": "ProjetoPedidosInfra",
-      "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
-      "packagesPath": "C:\\Users\\Douglas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
+      "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\ProjetoPedidosInfra.csproj",
+      "packagesPath": "C:\\Users\\Leone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosInfra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Douglas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Leone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2042,8 +2043,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
-              "projectPath": "C:\\Users\\Douglas\\Desktop\\AreaTrabalho01\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
+            "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj": {
+              "projectPath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosDomain\\ProjetoPedidosDomain.csproj"
             }
           }
         }
@@ -2097,7 +2098,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2106,7 +2107,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.2.0 was resolved.",
+      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.2.0 foi resolvida.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net6.0"

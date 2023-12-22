@@ -1,73 +1,77 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoPedidosBusiness.Requests.ProductRequests;
-using ProjetoPedidosBusiness.Requests.UserRequests;
-using ProjetoPedidosDomain.Models;
 
 namespace ProjetoPedidosAplication.Controllers
 {
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public ProductController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpPost]
         [Route("create/{name},{price},{category}")]
-        public Task<object> CreateProduct(
-            [FromRoute] string name, decimal price, string category,
-            [FromServices] IMediator mediator,
-            [FromBody] CreateProductRequest request)
+        public Task<object> CreateProduct([FromRoute] string name, decimal price, string category)
         {
-            request.Name = name;
-            request.Price = price;
-            request.Category = category;
+            var request = new CreateProductRequest()
+            {
+                Name = name,
+                Price = price,
+                Category = category
+            };
 
-            return mediator.Send(request);
+            return _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getAllProducts")]
-        public Task<object> GetAllProduct(
-            [FromServices] IMediator mediator,
-            [FromBody] GetAllProductRequest request)
+        public Task<object> GetAllProduct()
         {
-            return mediator.Send(request);
-
+            var request = new GetAllProductRequest();
+            return _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getByIdProducts/{id}")]
-        public Task<object> GetByIdProduct(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] GetByIdProductRequest request)
+        public Task<object> GetByIdProduct([FromRoute] string id)
         {
-            request.Id = id;
-            return mediator.Send(request);
+            var request = new GetByIdProductRequest()
+            {
+                Id = id
+            };
+            return _mediator.Send(request);
         }
 
         [HttpPut]
         [Route("update/{id},{name},{price},{category}")]
-        public Task<object> UpdateProduct(
-            [FromRoute] string id, string name, decimal price, string category,
-            [FromServices] IMediator mediator,
-            [FromBody] UpdateProductRequest request)
+        public Task<object> UpdateProduct([FromRoute] string id, string name, decimal price, string category)
         {
-            request.Id = id;
-            request.Name = name;
-            request.Price = price;
-            request.Category = category;
+            var request = new UpdateProductRequest()
+            {
+                Id = id,
+                Name = name,
+                Price = price,
+                Category = category
+            };
 
-            return mediator.Send(request);
+            return _mediator.Send(request);
         }
 
         [HttpDelete]
         [Route("delete/{id}")]
-        public Task<object> DeleteProduct(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] DeleteProductRequest request)
+        public Task<object> DeleteProduct([FromRoute] string id)
         {
-            request.Id = id;
-            return mediator.Send(request);
+            var request = new DeleteProductRequest()
+            {
+                Id= id
+            };
+
+            return _mediator.Send(request);
         }
     }
 }

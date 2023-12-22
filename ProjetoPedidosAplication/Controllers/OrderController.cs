@@ -8,75 +8,81 @@ namespace ProjetoPedidosAplication.Controllers
     [Route("Oder/")]
     public class OrderController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public OrderController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpPost]
         [Route("createOrder/{userName},{userCpf},{productName}")]
-        public Task<object> CreateProduct(
-            [FromRoute] string userName, string userCpf, string productName,
-            [FromServices] IMediator mediator,
-            [FromBody] CreateOrderRequest request)
+        public async Task<object> CreateProduct([FromRoute] string userName, string userCpf, string productName)
         {
-            request.UserName = userName;
-            request.UserCpf = userCpf;
-            request.Product = productName;
+            var request = new CreateOrderRequest()
+            {
+                UserName = userName,
+                UserCpf = userCpf,
+                Product = productName
+            };
 
-            return mediator.Send(request);
-        } 
-        
+            return await _mediator.Send(request);
+        }
+
         [HttpPost]
         [Route("insertProducOrder/{id},{productName}")]
-        public async Task<object> InsertProduct(
-            [FromRoute] string id, string productName,
-            [FromServices] IMediator mediator,
-            [FromBody] InsertProductsOrderRequest request)
+        public async Task<object> InsertProduct([FromRoute] string id, string productName)
         {
-            request.Id = id;
-            request.Product = productName;
+            var request = new InsertProductsOrderRequest()
+            {
+                Id = id,
+                Product = productName
+            };
 
-            return await mediator.Send(request);
-        } 
-        
+            return await _mediator.Send(request);
+        }
+
         [HttpDelete]
         [Route("insertProducOrder/{id},{productName}")]
-        public async Task<object> RemoveProduct(
-            [FromRoute] string id, string productName,
-            [FromServices] IMediator mediator,
-            [FromBody] RemoveProductOrderRequest request)
+        public async Task<object> RemoveProduct([FromRoute] string id, string productName)
         {
-            request.Id = id;
-            request.Product = productName;
+            var request = new RemoveProductOrderRequest()
+            {
+                Id = id,
+                Product = productName
+            };
 
-            return await mediator.Send(request);
-        } 
+            return await _mediator.Send(request);
+        }
 
         [HttpDelete]
         [Route("deleteOrder/{id}")]
-        public async Task<object> DeleteOrder(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] DeleteOrderRequest request)
+        public async Task<object> DeleteOrder([FromRoute] string id)
         {
-            request.Id = id;
-            return await mediator.Send(request);
+            var request = new DeleteOrderRequest()
+            {
+                Id = id
+            };
+            return await _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getById/{id}")]
-        public Task<object> GetOrderById(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] GetOrderByIdRequest request)
+        public  async Task<object> GetOrderById([FromRoute] string id)
         {
-            request.Id = id;
-            return mediator.Send(request);
+            var request = new GetOrderByIdRequest()
+            {
+                Id = id
+            };
+            return await _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getAllOrders")]
-        public async Task<object> GetAllOrders(
-            [FromServices] IMediator mediator,
-            [FromBody] GetAllOrdersRequest request )
+        public async Task<object> GetAllOrders()
         {
-            return await mediator.Send(request);
+            var request = new GetAllOrdersRequest();
+            return await _mediator.Send(request);
         }
     }
 }

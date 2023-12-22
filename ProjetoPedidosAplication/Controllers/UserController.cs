@@ -1,9 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ProjetoPedidosBusiness.Handlers;
-using ProjetoPedidosBusiness.Handlers.UserHandler;
 using ProjetoPedidosBusiness.Requests.UserRequests;
-using ProjetoPedidosDomain.Models;
 
 namespace ProjetoPedidosAplication.Controllers
 {
@@ -11,64 +8,69 @@ namespace ProjetoPedidosAplication.Controllers
     [Route("v1/users/")]
     public class UserController : ControllerBase
     {
+        private readonly IMediator _mediator;
+        public UserController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpPost]
         [Route("create/{name},{email},{cpf}")]
-        public Task<object> CreateUser(
-            [FromRoute] string name, string email, string cpf,
-            [FromServices] IMediator mediator,
-            [FromBody] CreateUserRequest request)
+        public async Task<object> CreateUser([FromRoute] string name, string email, string cpf)
         {
-            request.Name = name;
-            request.Email = email;
-            request.CPF = cpf;
-
-            return mediator.Send(request);
+            var request = new CreateUserRequest()
+            { 
+                Name = name,
+                Email = email,
+                CPF = cpf
+            };
+           
+            return await _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getAllUsers/")]
-        public async Task<object> GetAllUsers(
-            [FromServices] IMediator mediator,
-            [FromBody] GetAllUsersRequest request)
+        public async Task<object> GetAllUsers( )       
         {
-            return await mediator.Send(request);
+            var request = new GetAllUsersRequest();
+            return await _mediator.Send(request);
         }
 
-        [HttpOptions]
+        [HttpGet]
         [Route("getById/{id}")]
-        public async Task<object> GetById(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] GetByIdRequest request)
+        public async Task<object> GetById([FromRoute] string id)
         {
-            request.Id = id;
-            return await mediator.Send(request); ;
+            var request = new GetByIdRequest()
+            {
+                Id = id
+            };
+            return await _mediator.Send(request); ;
         }
 
         [HttpPut]
         [Route("update/{id},{name},{email},{cpf}")]
-        public Task<object> UpdateUser(
-            [FromRoute] string id, string name, string email, string cpf,
-            [FromServices] IMediator mediator,
-            [FromBody] UpdateUserRequest request)
+        public async Task<object> UpdateUser([FromRoute] string id, string name, string email, string cpf)
         {
-            request.Id = id;
-            request.Name = name;
-            request.Email = email;
-            request.CPF = cpf;
+            var request = new UpdateUserRequest()
+            {
+                Id = id,
+                Name = name,
+                Email = email,
+                CPF = cpf
+            };
 
-            return mediator.Send(request);
+            return await _mediator.Send(request);
         }
 
         [HttpDelete]
         [Route("delete/{id}")]
-        public async Task<object> Delete(
-            [FromRoute] string id,
-            [FromServices] IMediator mediator,
-            [FromBody] DeleteUserRequest request)
+        public async Task<object> Delete([FromRoute] string id)
         {
-            request.Id = id;
-            return await mediator.Send(request); ;
+            var request = new DeleteUserRequest()
+            {
+                Id = id
+            };
+            return await _mediator.Send(request); ;
         }
     }
 }
