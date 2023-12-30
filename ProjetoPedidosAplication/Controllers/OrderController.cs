@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoPedidosBusiness.Requests.OrderRequests;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosAplication.Controllers
 {
     [ApiController]
-    [Route("Oder/")]
+    [Route("v1/Oder/")]
     public class OrderController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -16,12 +17,11 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("createOrder/{userName},{userCpf},{productName}")]
-        public async Task<object> CreateProduct([FromRoute] string userName, string userCpf, string productName)
+        [Route("createOrder/{userCpf}/{productName}")]
+        public async Task<OrderCommandResult> CreateProduct([FromRoute] string userCpf, string productName)
         {
             var request = new CreateOrderRequest()
             {
-                UserName = userName,
                 UserCpf = userCpf,
                 Product = productName
             };
@@ -30,8 +30,8 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("insertProducOrder/{id},{productName}")]
-        public async Task<object> InsertProduct([FromRoute] string id, string productName)
+        [Route("insertProducOrder/{id}/{productName}")]
+        public async Task<OrderCommandResult> InsertProduct([FromRoute] string id, string productName)
         {
             var request = new InsertProductsOrderRequest()
             {
@@ -43,8 +43,8 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpDelete]
-        [Route("insertProducOrder/{id},{productName}")]
-        public async Task<object> RemoveProduct([FromRoute] string id, string productName)
+        [Route("insertProducOrder/{id}/{productName}")]
+        public async Task<OrderCommandResult> RemoveProduct([FromRoute] string id, string productName)
         {
             var request = new RemoveProductOrderRequest()
             {
@@ -57,7 +57,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpDelete]
         [Route("deleteOrder/{id}")]
-        public async Task<object> DeleteOrder([FromRoute] string id)
+        public async Task<OrderCommandResult> DeleteOrder([FromRoute] string id)
         {
             var request = new DeleteOrderRequest()
             {
@@ -68,7 +68,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpGet]
         [Route("getById/{id}")]
-        public  async Task<object> GetOrderById([FromRoute] string id)
+        public  async Task<OrderCommandResult> GetOrderById([FromRoute] string id)
         {
             var request = new GetOrderByIdRequest()
             {
@@ -79,7 +79,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpGet]
         [Route("getAllOrders")]
-        public async Task<object> GetAllOrders()
+        public async Task<OrderCommandResult> GetAllOrders()
         {
             var request = new GetAllOrdersRequest();
             return await _mediator.Send(request);

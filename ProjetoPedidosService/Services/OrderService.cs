@@ -18,9 +18,10 @@ namespace ProjetoPedidosService.Services
             _productRepository = productRepository;
         }
 
-        public CommandResult Create(string productName, string userCpf)
+        public OrderCommandResult Create(string productName, string userCpf)
         {
-            var product = _productRepository.GetByName(productName);
+            var name = productName.ToUpper();
+            var product = _productRepository.GetByName(name);
 
             var listProduct = new List<Product>();
             listProduct.Add(product);
@@ -29,19 +30,19 @@ namespace ProjetoPedidosService.Services
 
             if (user == null)
             {
-                return new CommandResult(false, "Falha ao realizar o pedido, Usuário não encontrado !", false);
+                return OrderCommandResult.Result(false, "Falha ao realizar o pedido, Usuário não encontrado !", null);
             }
 
             if (listProduct.FirstOrDefault() == null)
             {
-                return new CommandResult(false, "Produto não encontrado !", false);
+                return OrderCommandResult.Result(false, "Falha ao realizar o pedido, Produto não encontrado !", null);
             }
 
             var total = listProduct.Select(x => x.Price).Sum();
             var order = new Order()
             {
                 Id = Guid.NewGuid().ToString(),
-                CreatedDate = DateTime.Now,
+                CreatedDate = DateTime.UtcNow,
                 UserName = user.Name,
                 UserCpf = user.CPF,
                 ListProducts = listProduct,
@@ -50,19 +51,19 @@ namespace ProjetoPedidosService.Services
 
             _repository.Create(order);
 
-            return new CommandResult(true, "Ordem cadastrada com sucesso!", order);
+            return OrderCommandResult.Result(true, "Ordem cadastrada com sucesso!", order);
         }
 
-        public CommandResult InsertProductOrder(string id, string productName)
+        public OrderCommandResult InsertProductOrder(string id, string productName)
         {
             var order = _repository.GetById(id);
             if (order == null)
-                return new CommandResult(false, "Falha oa encontrar o Pedido", false);
+                return OrderCommandResult.Result(false, "Falha oa encontrar o Pedido", null);
 
             var name = productName.ToUpper();
             var products = _productRepository.GetByName(name);
             if (products == null)
-                return new CommandResult(false, "Falha oa encontrar o Produto", false);
+                return OrderCommandResult.Result(false, "Falha oa encontrar o Produto", null);
 
 
             order.ListProducts.Add(products);
@@ -70,63 +71,73 @@ namespace ProjetoPedidosService.Services
 
             var result = _repository.Update(id, order);
 
-            return new CommandResult(true, "Lista de produtos atualizada com sucesso!", result);
+            return OrderCommandResult.Result(true, "Lista de produtos atualizada com sucesso!", result);
 
         }
 
-        public CommandResult RemoveProductOrder(string id, string productName)
+        public OrderCommandResult RemoveProductOrder(string id, string productName)
         {
             var order = _repository.GetById(id);
             if (order == null)
-                return new CommandResult(false, "Falha oa encontrar o Pedido", false);
+                return OrderCommandResult.Result(false, "Falha oa encontrar o Pedido", null);
 
             var name = productName.ToUpper();
             var product = _productRepository.GetByName(name);
             if (product == null)
-                return new CommandResult(false, "Falha oa encontrar o Produto", false);
+                return OrderCommandResult.Result(false, "Falha oa encontrar o Produto", null);
 
             var t = order.ListProducts.FirstOrDefault(x => x.Name == productName);
-            order.ListProducts.Remove(t);
+            if (t != null)
+            {
+                order.ListProducts.Remove(t);
+            }
+
             order.Total = order.ListProducts.Select(x => x.Price).Sum();
 
             var result = _repository.Update(id, order);
 
-            return new CommandResult(true, "produto removido com sucesso!", result);
+            return OrderCommandResult.Result(true, "produto removido com sucesso!", result);
 
         }
 
-        public CommandResult Delete(string id)
+        public OrderCommandResult Delete(string id)
         {
             var delete = _repository.GetById(id);
             if (delete == null)
             {
-                return new CommandResult(false, $"Não existi um cadastro para id {id} no sistema !", false);
+                return OrderCommandResult.Result(false, $"Não existi um cadastro para id {id} no sistema !", null);
             }
 
             _repository.Delete(id);
-            return new CommandResult(true, "Produto excluido com sucesso !", true);
+            return  OrderCommandResult.Result(true, "Produto excluido com sucesso !", delete);
         }
 
-        public CommandResult GetAll()
+        public OrderCommandResult GetAll()
         {
             var result = _repository.GetAll();
             if (result.Count == 0)
             {
-                return new CommandResult(true, "Não existem pedidos cadastrados no momento!", result);
+                return OrderCommandResult.ResultList(true, "Não existem pedidos cadastrados no momento!", result);
             }
 
-            return new CommandResult(true, "Pedidos carregados com sucesso!", result);
+            return OrderCommandResult.ResultList(true, "Pedidos carregados com sucesso!", result);
         }
 
-        public CommandResult GetById(string id)
+        public OrderCommandResult GetById(string id)
         {
             var result = _repository.GetById(id);
             if (result == null)
             {
-                return new CommandResult(false, "Ordem não encontrada !", false);
+                return OrderCommandResult.Result(false, "Ordem não encontrada !", null);
             }
 
-            return new CommandResult(true, "ordem encontrada com sucesso", result);
+            return OrderCommandResult.Result(true, "ordem encontrada com sucesso", result);
+        }
+
+        private string ToUperName(string name)
+        {
+            var toUpperName = name.ToUpper();
+            return toUpperName;
         }
     }
 }

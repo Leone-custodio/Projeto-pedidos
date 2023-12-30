@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoPedidosBusiness.Requests.ProductRequests;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosAplication.Controllers
 {
     [ApiController]
+    [Route("v1/product")]
     public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -15,8 +17,8 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("create/{name},{price},{category}")]
-        public Task<object> CreateProduct([FromRoute] string name, decimal price, string category)
+        [Route("create/{name}/{price}/{category}")]
+        public Task<ProductCommandResult> CreateProduct([FromRoute] string name, decimal price, string category)
         {
             var request = new CreateProductRequest()
             {
@@ -30,7 +32,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpGet]
         [Route("getAllProducts")]
-        public Task<object> GetAllProduct()
+        public Task<ProductCommandResult> GetAllProduct()
         {
             var request = new GetAllProductRequest();
             return _mediator.Send(request);
@@ -38,7 +40,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpGet]
         [Route("getByIdProducts/{id}")]
-        public Task<object> GetByIdProduct([FromRoute] string id)
+        public Task<ProductCommandResult> GetByIdProduct([FromRoute] string id)
         {
             var request = new GetByIdProductRequest()
             {
@@ -48,8 +50,8 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPut]
-        [Route("update/{id},{name},{price},{category}")]
-        public Task<object> UpdateProduct([FromRoute] string id, string name, decimal price, string category)
+        [Route("update/{id}/{name}/{price}/{category}")]
+        public Task<ProductCommandResult> UpdateProduct([FromRoute] string id, string name, decimal price, string category)
         {
             var request = new UpdateProductRequest()
             {
@@ -64,7 +66,7 @@ namespace ProjetoPedidosAplication.Controllers
 
         [HttpDelete]
         [Route("delete/{id}")]
-        public Task<object> DeleteProduct([FromRoute] string id)
+        public Task<ProductCommandResult> DeleteProduct([FromRoute] string id)
         {
             var request = new DeleteProductRequest()
             {

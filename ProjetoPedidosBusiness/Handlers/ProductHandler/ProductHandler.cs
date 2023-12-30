@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using ProjetoPedidosBusiness.Requests.ProductRequests;
 using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.ProductHandler
 {
-    public class ProductHandler : IRequestHandler<CreateProductRequest, object>
+    public class ProductHandler : IRequestHandler<CreateProductRequest, ProductCommandResult>
     {
         private readonly IProductService _Service;
 
@@ -14,7 +15,7 @@ namespace ProjetoPedidosBusiness.Handlers.ProductHandler
             _Service = service;
         }
 
-        public async Task<object> Handle(CreateProductRequest request, CancellationToken cancellationToken)
+        public async Task<ProductCommandResult> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
             var product = new Product()
             {

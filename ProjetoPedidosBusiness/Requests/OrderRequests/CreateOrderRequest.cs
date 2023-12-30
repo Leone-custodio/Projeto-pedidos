@@ -1,10 +1,10 @@
 ﻿using MediatR;
+using ProjetoPedidosService.Commands;
 namespace ProjetoPedidosBusiness.Requests.OrderRequests
 {
-    public class CreateOrderRequest : IRequest<object>
+    public class CreateOrderRequest : IRequest<OrderCommandResult>
     {
-        public string UserName { get; set; } = "";
-        public string UserCpf { get; set; } = "";
-        public string Product { get; set; } = "";
+        public string? UserCpf { get; set; } 
+        public string? Product { get; set; } 
     }
 }

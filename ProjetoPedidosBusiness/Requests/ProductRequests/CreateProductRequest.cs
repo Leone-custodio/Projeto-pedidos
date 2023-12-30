@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosBusiness.Requests.ProductRequests
 {
-    public class CreateProductRequest : IRequest<object>
+    public class CreateProductRequest : IRequest<ProductCommandResult>
     {
         public string Name { get; set; } = "";
         public decimal Price { get; set; }

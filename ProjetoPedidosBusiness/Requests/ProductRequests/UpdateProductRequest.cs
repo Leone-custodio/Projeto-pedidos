@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosBusiness.Requests.ProductRequests
 {
-    public class UpdateProductRequest : IRequest<object>
+    public class UpdateProductRequest : IRequest<ProductCommandResult>
     {
         public string Id { get; set; } = "";
         public string Name { get; set; } = "";

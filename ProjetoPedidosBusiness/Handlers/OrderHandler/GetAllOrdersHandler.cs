@@ -1,10 +1,11 @@
 ﻿using MediatR;
 using ProjetoPedidosBusiness.Requests.OrderRequests;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.OrderHandler
 {
-    public class GetAllOrdersHandler : IRequestHandler<GetAllOrdersRequest, object>
+    public class GetAllOrdersHandler : IRequestHandler<GetAllOrdersRequest, OrderCommandResult>
     {
         private readonly IOrderService _service;
 
@@ -13,7 +14,7 @@ namespace ProjetoPedidosBusiness.Handlers.OrderHandler
             _service = service;
         }
 
-        public async Task<object> Handle(GetAllOrdersRequest request, CancellationToken cancellationToken)
+        public async Task<OrderCommandResult> Handle(GetAllOrdersRequest request, CancellationToken cancellationToken)
         {
             var result = _service.GetAll();
             return await Task.FromResult(result);

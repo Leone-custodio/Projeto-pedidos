@@ -1,15 +1,14 @@
-﻿using ProjetoPedidosDomain.Models;
-using ProjetoPedidosService.Commands;
+﻿using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosService.Interfaces
 {
     public interface IOrderService
     {
-        CommandResult Create(string productName, string userCpf);
-        CommandResult InsertProductOrder(string id, string productName);
-        CommandResult RemoveProductOrder(string id, string productName);
-        CommandResult GetById(string id);
-        CommandResult GetAll();
-        CommandResult Delete(string id);
+        OrderCommandResult Create(string productName, string userCpf);
+        OrderCommandResult InsertProductOrder(string id, string productName);
+        OrderCommandResult RemoveProductOrder(string id, string productName);
+        OrderCommandResult GetById(string id);
+        OrderCommandResult GetAll();
+        OrderCommandResult Delete(string id);
     }
 }

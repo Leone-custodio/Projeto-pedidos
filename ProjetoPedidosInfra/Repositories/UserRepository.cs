@@ -37,13 +37,13 @@ namespace ProjetoPedidosInfra.Repositories
             return user;
         }
         
-        public User GetByCpf(string cpf)
+        public User GetByCpf(string? cpf)
         {
             User user = _context.Users.Find(x => x.CPF == cpf).FirstOrDefault();
             return user;
         }
 
-        public User Update(string id, User user)
+        public User Update(string? id, User user)
         {
             _context.Users.ReplaceOne(x => x.Id == id, user);
             return user;

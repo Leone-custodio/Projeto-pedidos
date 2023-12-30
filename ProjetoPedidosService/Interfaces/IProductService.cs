@@ -5,10 +5,10 @@ namespace ProjetoPedidosService.Interfaces
 {
     public interface IProductService
     {
-        CommandResult Create(Product product);
-        CommandResult GetById(string id);
-        CommandResult GetAll();
-        CommandResult Update(string id, Product product);
-        CommandResult Delete(string id);
+        ProductCommandResult Create(Product product);
+        ProductCommandResult GetById(string id);
+        ProductCommandResult GetAll();
+        ProductCommandResult Update(string id, Product product);
+        ProductCommandResult Delete(string id);
     }
 }

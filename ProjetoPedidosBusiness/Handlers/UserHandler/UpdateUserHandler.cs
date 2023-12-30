@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using ProjetoPedidosBusiness.Requests.UserRequests;
 using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.UserHandler
 {
-    public class UpdateUserHandler : IRequestHandler<UpdateUserRequest, object>
+    public class UpdateUserHandler : IRequestHandler<UpdateUserRequest, UserCommandResult>
     {
         private readonly IUserService _service;
 
@@ -14,14 +15,15 @@ namespace ProjetoPedidosBusiness.Handlers.UserHandler
             _service = service;
         }
 
-        public async Task<object> Handle(UpdateUserRequest request, CancellationToken cancellationToken)
+        public async Task<UserCommandResult> Handle(UpdateUserRequest request, CancellationToken cancellationToken)
         {
             var user = new User()
             {
                 Id = request.Id,
                 Name = request.Name,
                 Email = request.Email,
-                CPF = request.CPF
+                CPF = request.CPF,
+                Endereco = request.Endereco
             };
             var result = _service.Update(request.Id,user);
             return await Task.FromResult(result);

@@ -1,10 +1,11 @@
 ﻿using MediatR;
 using ProjetoPedidosBusiness.Requests.OrderRequests;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.OrderHandler
 {
-    public class CreateOrderHandler : IRequestHandler<CreateOrderRequest, object>
+    public class CreateOrderHandler : IRequestHandler<CreateOrderRequest, OrderCommandResult>
     {
         private readonly IOrderService _service;
 
@@ -13,7 +14,7 @@ namespace ProjetoPedidosBusiness.Handlers.OrderHandler
             _service = service;
         }
 
-        public async Task<object> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
+        public async Task<OrderCommandResult> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
             var result = _service.Create(request.Product, request.UserCpf);
             return await Task.FromResult(result);

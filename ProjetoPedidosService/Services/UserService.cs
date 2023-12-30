@@ -14,96 +14,120 @@ namespace ProjetoPedidosService.Services
             _repository = repository;
         }
 
-        public CommandResult Create(User user)
+        public UserCommandResult Create(User user)
         {
             if (CheckCpf(user.CPF) == false & IsCpf(user.CPF))
             {
                 _repository.Create(user);
 
-                return new CommandResult(true, "Usuário cadastrado com sucesso !", new
-                {
-                    user.Id,
-                    user.Name,
-                    user.Email,
-                    user.CPF
-                });
+                return UserCommandResult.Result(true, "Usuário cadastrado com sucesso !", user);
             }
             else
             {
-                return new CommandResult(false, $"O cpf {user.CPF} está em uso ou inválido !", false);
+                return UserCommandResult.Result(false, $"O cpf {user.CPF} está em uso ou inválido !", null);
             }
         }
 
-        public CommandResult Delete(string? id)
+        public UserCommandResult Delete(string id)
         {
             var user = _repository.GetById(id);
             if (user == null)
             {
-                return new CommandResult(false, $"O usuário id = {id} não existe no banco de dados", false);
+                return UserCommandResult.Result(false, $"O usuário id = {id} não existe no banco de dados", null);
             }
             else
             {
                 _repository.Delete(id);
 
-                return new CommandResult(true, $"Usuário {user.Name} excluído com sucesso!", null);
+                return UserCommandResult.Result(true, $"Usuário {user.Name} excluído com sucesso!", null);
             }
         }
 
-        public CommandResult GetAll()
+        public UserCommandResult GetAll()
         {
             var result = _repository.GetAll();
             if (result.Count == 0)
             {
-                return new CommandResult(true, "Não tem usuários cadastrados no sistema no momento", result);
+                return UserCommandResult.ResultList(true, "Não tem usuários cadastrados no sistema no momento", result);
             }
-            else 
+            else
             {
-                return new CommandResult(true, "Busca realizada com sucesso!", result);
+                return UserCommandResult.ResultList(true, "Busca realizada com sucesso!", result);
             }
         }
 
-        public CommandResult GetById(string id)
+        public UserCommandResult GetById(string id)
         {
             var user = _repository.GetById(id);
 
             if (user == null)
             {
-                return new CommandResult(false, $"Usuário id {id} não existe no banco de dados !", false);
+                return UserCommandResult.Result(false, $"Usuário id {id} não existe no banco de dados !", null);
             }
             else
             {
-                return new CommandResult(true, "Usuário encontrado com sucesso!", new
-                {
-                    user.Id,
-                    user.Name,
-                    user.Email,
-                    user.CPF
-                });
+                return UserCommandResult.Result(true, "Usuário encontrado com sucesso!", user);
             }
         }
 
-        public CommandResult Update(string id, User user)
+        public UserCommandResult Update(string id, User user)
         {
             var result = _repository.GetById(id);
             if (result == null)
             {
-                return new CommandResult(false, $"O usuário id = {id} não existe no banco de dados", false);
+                return UserCommandResult.Result(false, $"O usuário id = {id} não existe no banco de dados", null);
             }
             else
             {
                 _repository.Update(id, user);
 
-                return new CommandResult(true, $"Usuário {user.Name} atualizado com sucesso!", new
-                {
-                    user.Id,
-                    user.Name,
-                    user.Email,
-                    user.CPF
-                });
+                return UserCommandResult.Result(true, $"Usuário {user.Name} atualizado com sucesso!", user);
             }
         }
 
-        private bool CheckCpf(string cpf)
+        public UserCommandResult GetPassword(string cpf, string password)
+        {
+            var user = _repository.GetByCpf(cpf);
+
+            if(user == null) 
+            {
+                return UserCommandResult.Result(false, $"O usuário cpf = {cpf} não existe no banco de dados", null);
+            }
+
+            if (password != user.Password) 
+            {
+                return UserCommandResult.Result(false, "Senha inválida, digite novamente", null);
+            }
+
+            return UserCommandResult.Result(true, "Usuário validado com sucesso", user);
+        }
+
+        public UserCommandResult UpdatePassword(string? cpf, string? password, string? newPassword)
+        {
+            var user = _repository.GetByCpf(cpf);
+
+            if (user == null)
+            {
+                return UserCommandResult.Result(false, $"O usuário cpf = {cpf} não existe no banco de dados", null);
+            }
+
+            if (password != user.Password)
+            {
+                return UserCommandResult.Result(false, "Senha atual inválida, digite novamente", null);
+            }
+
+            if (newPassword == password)
+            {
+                return UserCommandResult.Result(false, "Erro ao atualizar a senha, a nova senha não pode ser igual a senha antiga", null);
+            }
+
+            user.Password = newPassword;
+            var newUser = _repository.Update(user.Id, user);
+
+            return UserCommandResult.Result(true, "Senha atualizada com sucesso", newUser);
+        }
+
+        private bool CheckCpf(string? cpf)
         {
             var result = _repository.GetByCpf(cpf);
             if (result == null)
@@ -154,5 +178,6 @@ namespace ProjetoPedidosService.Services
 
             return cpf.EndsWith(digito);
         }
+      
     }
 }

@@ -5,10 +5,12 @@ namespace ProjetoPedidosService.Interfaces
 {
     public interface IUserService
     {
-        CommandResult Create(User user);
-        CommandResult GetById(string id);
-        CommandResult GetAll();
-        CommandResult Update(string id, User user);
-        CommandResult Delete(string id);
+        UserCommandResult Create(User user);
+        UserCommandResult GetById(string id);
+        UserCommandResult GetAll();
+        UserCommandResult Update(string id, User user);
+        UserCommandResult GetPassword(string cpf, string password);
+        UserCommandResult UpdatePassword(string? cpf, string? password, string? newPassword);
+        UserCommandResult Delete(string id);
     }
 }

@@ -1,10 +1,11 @@
 ﻿using MediatR;
 using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosBusiness.Requests.ProductRequests
 {
-    public class GetAllProductRequest : IRequest<object>
+    public class GetAllProductRequest : IRequest<ProductCommandResult>
     {
-        public List<Product> ListProduct { get; set; }
+        public ProductCommandResult? Result { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosBusiness.Requests.OrderRequests
 {
-    public class GetAllOrdersRequest : IRequest<object>
+    public class GetAllOrdersRequest : IRequest<OrderCommandResult>
     {
-        public List<Order> Orders { get; set; } = new();
+        public OrderCommandResult? Result{ get; set; }
     }
 }

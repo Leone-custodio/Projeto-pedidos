@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using ProjetoPedidosBusiness.Requests.UserRequests;
 using ProjetoPedidosDomain.Models;
+using ProjetoPedidosService.Commands;
 using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.UserHandler
 {
-    public class GetByIdHandler : IRequestHandler<GetByIdRequest, object>
+    public class GetByIdHandler : IRequestHandler<GetByIdRequest, UserCommandResult>
     {
         private readonly IUserService _service;
 
@@ -14,7 +15,7 @@ namespace ProjetoPedidosBusiness.Handlers.UserHandler
             _service = service;
         }
 
-        public async Task<object> Handle(GetByIdRequest request, CancellationToken cancellationToken)
+        public async Task<UserCommandResult> Handle(GetByIdRequest request, CancellationToken cancellationToken)
         {
             var result = _service.GetById(request.Id);
 
