@@ -23,7 +23,7 @@ namespace ProjetoPedidosBusiness.Handlers.UserHandler
                 Name = request.Name,
                 Email = request.Email,
                 CPF = request.CPF,
-                Endereco = request.Endereco
+                Address = request.Address
             };
             var result = _service.Update(request.Id,user);
             return await Task.FromResult(result);

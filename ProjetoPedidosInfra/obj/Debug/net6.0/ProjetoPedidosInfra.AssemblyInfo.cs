@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoPedidosInfra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75634e27e9773c49c6dd5d88fe2f665d189877de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoPedidosInfra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoPedidosInfra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

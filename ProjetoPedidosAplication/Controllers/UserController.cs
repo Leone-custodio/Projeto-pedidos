@@ -16,15 +16,15 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("create/{name}/{email}/{cpf}/{endereco}/{password}")]
-        public async Task<UserCommandResult> CreateUser([FromRoute] string name, string email, string cpf, string endereco, string password)
-        {
+        [Route("create/{name}/{email}/{cpf}/{addres}/{password}")]
+        public async Task<UserCommandResult> CreateUser([FromRoute] string name, string email, string cpf, string addres, string password)
+         {
             var request = new CreateUserRequest()
             { 
                 Name = name,
                 Email = email,
                 CPF = cpf,
-                Endereco = endereco,
+                Address = addres,
                 Password = password
             };
            
@@ -75,8 +75,8 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPut]
-        [Route("update/{id}/{name}/{email}/{cpf}/{endereco}")]
-        public async Task<UserCommandResult> UpdateUser([FromRoute] string id, string name, string email, string cpf, string endereco)
+        [Route("update/{id}/{name}/{email}/{cpf}/{addres}")]
+        public async Task<UserCommandResult> UpdateUser([FromRoute] string id, string name, string email, string cpf, string addres)
         {
             var request = new UpdateUserRequest()
             {
@@ -84,7 +84,7 @@ namespace ProjetoPedidosAplication.Controllers
                 Name = name,
                 Email = email,
                 CPF = cpf,
-                Endereco = endereco
+                Address = addres
             };
 
             return await _mediator.Send(request);
