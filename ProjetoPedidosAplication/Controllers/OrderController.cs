@@ -42,8 +42,8 @@ namespace ProjetoPedidosAplication.Controllers
             return await _mediator.Send(request);
         }
 
-        [HttpDelete]
-        [Route("insertProducOrder/{id}/{productName}")]
+        [HttpPost]
+        [Route("removeProductOrder/{id}/{productName}")]
         public async Task<OrderCommandResult> RemoveProduct([FromRoute] string id, string productName)
         {
             var request = new RemoveProductOrderRequest()

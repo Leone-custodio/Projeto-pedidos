@@ -86,7 +86,7 @@ namespace ProjetoPedidosService.Services
             if (product == null)
                 return OrderCommandResult.Result(false, "Falha oa encontrar o Produto", null);
 
-            var t = order.ListProducts.FirstOrDefault(x => x.Name == productName);
+            var t = order.ListProducts.FirstOrDefault(x => x.Name == name);
             if (t != null)
             {
                 order.ListProducts.Remove(t);
