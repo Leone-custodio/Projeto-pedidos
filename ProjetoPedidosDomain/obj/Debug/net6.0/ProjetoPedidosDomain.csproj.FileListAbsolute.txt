@@ -23,3 +23,16 @@ C:\Users\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedi
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\refint\ProjetoPedidosDomain.dll
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.pdb
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ref\ProjetoPedidosDomain.dll
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\bin\Debug\net6.0\ProjetoPedidosDomain.deps.json
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\bin\Debug\net6.0\ProjetoPedidosDomain.dll
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\bin\Debug\net6.0\ProjetoPedidosDomain.pdb
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.csproj.AssemblyReference.cache
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.AssemblyInfoInputs.cache
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.AssemblyInfo.cs
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.csproj.CoreCompileInputs.cache
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.sourcelink.json
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.dll
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\refint\ProjetoPedidosDomain.dll
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ProjetoPedidosDomain.pdb
+C:\Leone\Projeto-pedidos\ProjetoPedidosDomain\obj\Debug\net6.0\ref\ProjetoPedidosDomain.dll
