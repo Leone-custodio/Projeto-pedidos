@@ -40,12 +40,12 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpGet]
-        [Route("getById/{id}")]
-        public async Task<UserCommandResult> GetById([FromRoute] string id)
+        [Route("getByCpf/{cpf}")]
+        public async Task<UserCommandResult> GetById([FromRoute] string cpf)
         {
-            var request = new GetByIdRequest()
+            var request = new GetByCpfRequest()
             {
-                Id = id
+                Cpf = cpf
             };
             return await _mediator.Send(request); ;
         }

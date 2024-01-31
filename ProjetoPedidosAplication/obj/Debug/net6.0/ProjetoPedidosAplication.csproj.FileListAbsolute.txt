@@ -181,3 +181,6 @@ C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\obj\Debug\net6.0\refint\
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\obj\Debug\net6.0\ProjetoPedidosAplication.pdb
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\obj\Debug\net6.0\ProjetoPedidosAplication.genruntimeconfig.cache
 C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\obj\Debug\net6.0\ref\ProjetoPedidosAplication.dll
+C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\SendGrid.dll
+C:\Users\Leone\Projeto-pedidos\ProjetoPedidosAplication\bin\Debug\net6.0\StarkbankEcdsa.dll

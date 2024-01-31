@@ -6,18 +6,18 @@ using ProjetoPedidosService.Interfaces;
 
 namespace ProjetoPedidosBusiness.Handlers.UserHandler
 {
-    public class GetByIdHandler : IRequestHandler<GetByIdRequest, UserCommandResult>
+    public class GetByCpfHandler : IRequestHandler<GetByCpfRequest, UserCommandResult>
     {
         private readonly IUserService _service;
 
-        public GetByIdHandler(IUserService service)
+        public GetByCpfHandler(IUserService service)
         {
             _service = service;
         }
 
-        public async Task<UserCommandResult> Handle(GetByIdRequest request, CancellationToken cancellationToken)
+        public async Task<UserCommandResult> Handle(GetByCpfRequest request, CancellationToken cancellationToken)
         {
-            var result = _service.GetById(request.Id);
+            var result = _service.GetByCpf(request.Cpf);
 
             return  await Task.FromResult( result);
         }

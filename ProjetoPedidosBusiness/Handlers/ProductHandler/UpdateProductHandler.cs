@@ -22,7 +22,8 @@ namespace ProjetoPedidosBusiness.Handlers.ProductHandler
                 Id = request.Id,
                 Name = request.Name,
                 Price = request.Price,
-                Category = request.Category
+                Category = request.Category,
+                Description = request.Description
             };
             var result = _service.Update(request.Id, product);
             return await Task.FromResult(result);

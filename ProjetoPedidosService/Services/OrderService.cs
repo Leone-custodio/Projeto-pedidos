@@ -18,10 +18,9 @@ namespace ProjetoPedidosService.Services
             _productRepository = productRepository;
         }
 
-        public OrderCommandResult Create(string productName, string userCpf)
+        public OrderCommandResult Create(string productId, string userCpf)
         {
-            var name = productName.ToUpper();
-            var product = _productRepository.GetByName(name);
+            var product = _productRepository.GetById(productId);
 
             var listProduct = new List<Product>();
             listProduct.Add(product);
@@ -54,17 +53,15 @@ namespace ProjetoPedidosService.Services
             return OrderCommandResult.Result(true, "Ordem cadastrada com sucesso!", order);
         }
 
-        public OrderCommandResult InsertProductOrder(string id, string productName)
+        public OrderCommandResult InsertProductOrder(string id, string productId)
         {
             var order = _repository.GetById(id);
             if (order == null)
                 return OrderCommandResult.Result(false, "Falha oa encontrar o Pedido", null);
 
-            var name = productName.ToUpper();
-            var products = _productRepository.GetByName(name);
+            var products = _productRepository.GetById(productId);
             if (products == null)
                 return OrderCommandResult.Result(false, "Falha oa encontrar o Produto", null);
-
 
             order.ListProducts.Add(products);
             order.Total = order.ListProducts.Select(x => x.Price).Sum();
@@ -72,21 +69,19 @@ namespace ProjetoPedidosService.Services
             var result = _repository.Update(id, order);
 
             return OrderCommandResult.Result(true, "Lista de produtos atualizada com sucesso!", result);
-
         }
 
-        public OrderCommandResult RemoveProductOrder(string id, string productName)
+        public OrderCommandResult RemoveProductOrder(string id, string productId)
         {
             var order = _repository.GetById(id);
             if (order == null)
                 return OrderCommandResult.Result(false, "Falha oa encontrar o Pedido", null);
 
-            var name = productName.ToUpper();
-            var product = _productRepository.GetByName(name);
+            var product = _productRepository.GetById(productId);
             if (product == null)
                 return OrderCommandResult.Result(false, "Falha oa encontrar o Produto", null);
 
-            var t = order.ListProducts.FirstOrDefault(x => x.Name == productName);
+            var t = order.ListProducts.FirstOrDefault(x => x.Id == productId);
             if (t != null)
             {
                 order.ListProducts.Remove(t);
@@ -132,12 +127,6 @@ namespace ProjetoPedidosService.Services
             }
 
             return OrderCommandResult.Result(true, "ordem encontrada com sucesso", result);
-        }
-
-        private string ToUperName(string name)
-        {
-            var toUpperName = name.ToUpper();
-            return toUpperName;
         }
     }
 }

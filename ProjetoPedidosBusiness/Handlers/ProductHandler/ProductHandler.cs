@@ -23,6 +23,7 @@ namespace ProjetoPedidosBusiness.Handlers.ProductHandler
                 Name = request.Name,
                 Price = request.Price,
                 Category = request.Category,
+                Description = request.Description
             };
 
             var result = _Service.Create(product);

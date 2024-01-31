@@ -20,11 +20,11 @@ namespace ProjetoPedidosService.Services
             {
                 _repository.Create(user);
 
-                return UserCommandResult.Result(true, "Usuário cadastrado com sucesso !", user);
+                return UserCommandResult.Result(true, $"Usuário {user.Name} cadastrado com sucesso !", user);
             }
             else
             {
-                return UserCommandResult.Result(false, $"O cpf {user.CPF} está em uso ou inválido !", null);
+                return UserCommandResult.Result(false, "Erro ao cadastrar o usuário favor verificar os seus dados !", null);
             }
         }
 
@@ -56,13 +56,13 @@ namespace ProjetoPedidosService.Services
             }
         }
 
-        public UserCommandResult GetById(string id)
+        public UserCommandResult GetByCpf(string cpf)
         {
-            var user = _repository.GetById(id);
+            var user = _repository.GetByCpf(cpf);
 
             if (user == null)
             {
-                return UserCommandResult.Result(false, $"Usuário id {id} não existe no banco de dados !", null);
+                return UserCommandResult.Result(false, $"Usuário id {cpf} não existe no banco de dados !", null);
             }
             else
             {
@@ -99,7 +99,7 @@ namespace ProjetoPedidosService.Services
                 return UserCommandResult.Result(false, "Senha inválida, digite novamente", null);
             }
 
-            return UserCommandResult.Result(true, "Usuário validado com sucesso", user);
+            return UserCommandResult.Result(true, $"Bem vindo {user.Name} !!!", user);
         }
 
         public UserCommandResult UpdatePassword(string? cpf, string? password, string? newPassword)

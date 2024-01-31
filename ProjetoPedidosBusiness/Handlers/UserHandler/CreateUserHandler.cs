@@ -9,10 +9,12 @@ namespace ProjetoPedidosBusiness.Handlers.UserHandler
     public class CreateUserHandler : IRequestHandler<CreateUserRequest, UserCommandResult>
     {
         private readonly IUserService _Service;
+        private readonly IEmailService _emailService;
 
-        public CreateUserHandler(IUserService service)
+        public CreateUserHandler(IUserService service, IEmailService emailService)
         {
             _Service = service;
+            _emailService = emailService;
         }
 
         public async Task<UserCommandResult> Handle(CreateUserRequest request, CancellationToken cancellationToken)
@@ -28,6 +30,18 @@ namespace ProjetoPedidosBusiness.Handlers.UserHandler
             };
 
             var result = _Service.Create(user);
+
+            if (result.Success)
+            {
+                var email = new EmailModel
+                {
+                    UserEmail = user.Email,
+                    EmailSubject = result.Message,
+                    EmailBody = $"{user.Name}, seu cadastro foi criado com sucesso."
+                };
+                
+                await _emailService.SendEmailAsync(email.UserEmail, email.EmailSubject, email.EmailBody);
+            }
 
             return await Task.FromResult(result);
         }

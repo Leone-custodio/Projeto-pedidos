@@ -17,39 +17,39 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("createOrder/{userCpf}/{productName}")]
-        public async Task<OrderCommandResult> CreateProduct([FromRoute] string userCpf, string productName)
+        [Route("createOrder/{userCpf}/{productId}")]
+        public async Task<OrderCommandResult> CreateOrder([FromRoute] string userCpf, string productId)
         {
             var request = new CreateOrderRequest()
             {
                 UserCpf = userCpf,
-                Product = productName
+                ProductId = productId
             };
 
             return await _mediator.Send(request);
         }
 
         [HttpPost]
-        [Route("insertProducOrder/{id}/{productName}")]
-        public async Task<OrderCommandResult> InsertProduct([FromRoute] string id, string productName)
+        [Route("insertProducOrder/{id}/{productId}")]
+        public async Task<OrderCommandResult> InsertProduct([FromRoute] string id, string productId)
         {
             var request = new InsertProductsOrderRequest()
             {
                 Id = id,
-                Product = productName
+                ProductId = productId
             };
 
             return await _mediator.Send(request);
         }
 
         [HttpDelete]
-        [Route("insertProducOrder/{id}/{productName}")]
-        public async Task<OrderCommandResult> RemoveProduct([FromRoute] string id, string productName)
+        [Route("deleteProducOrder/{id}/{productId}")]
+        public async Task<OrderCommandResult> RemoveProduct([FromRoute] string id, string productId)
         {
             var request = new RemoveProductOrderRequest()
             {
                 Id = id,
-                Product = productName
+                ProductId = productId
             };
 
             return await _mediator.Send(request);

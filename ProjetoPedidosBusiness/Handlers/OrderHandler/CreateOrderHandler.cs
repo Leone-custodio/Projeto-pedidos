@@ -16,7 +16,7 @@ namespace ProjetoPedidosBusiness.Handlers.OrderHandler
 
         public async Task<OrderCommandResult> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
-            var result = _service.Create(request.Product, request.UserCpf);
+            var result = _service.Create(request.ProductId, request.UserCpf);
             return await Task.FromResult(result);
         }
     }

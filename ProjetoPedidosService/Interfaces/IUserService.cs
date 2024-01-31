@@ -6,7 +6,7 @@ namespace ProjetoPedidosService.Interfaces
     public interface IUserService
     {
         UserCommandResult Create(User user);
-        UserCommandResult GetById(string id);
+        UserCommandResult GetByCpf(string cpf);
         UserCommandResult GetAll();
         UserCommandResult Update(string id, User user);
         UserCommandResult GetPassword(string cpf, string password);

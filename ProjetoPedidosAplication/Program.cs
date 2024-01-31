@@ -28,6 +28,7 @@ builder.Services.AddScoped<DbProjectContext>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
@@ -36,6 +37,19 @@ builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<CreateUserHandler, CreateUserHandler>();
 builder.Services.AddTransient<ProductHandler, ProductHandler>();
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder
+            .AllowAnyOrigin() // Permitir requisições de qualquer origem
+            .AllowAnyMethod() // Permitir qualquer método HTTP (GET, POST, PUT, DELETE, etc.)
+            .AllowAnyHeader(); // Permitir qualquer cabeçalho na requisição
+    });
+});
+
 
 var app = builder.Build();
 
@@ -49,5 +63,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();

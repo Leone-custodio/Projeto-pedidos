@@ -3,9 +3,9 @@ using ProjetoPedidosService.Commands;
 
 namespace ProjetoPedidosBusiness.Requests.UserRequests
 {
-    public class GetByIdRequest : IRequest<UserCommandResult>
+    public class GetByCpfRequest : IRequest<UserCommandResult>
     {
-        public string Id { get; set; } = "";
+        public string Cpf { get; set; } = "";
        
     }
 }

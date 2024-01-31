@@ -17,14 +17,15 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPost]
-        [Route("create/{name}/{price}/{category}")]
-        public Task<ProductCommandResult> CreateProduct([FromRoute] string name, decimal price, string category)
+        [Route("create/{name}/{price}/{category}/{description}")]
+        public Task<ProductCommandResult> CreateProduct([FromRoute] string name, decimal price, string category, string description)
         {
             var request = new CreateProductRequest()
             {
                 Name = name,
                 Price = price,
-                Category = category
+                Category = category,
+                Description = description
             };
 
             return _mediator.Send(request);
@@ -50,15 +51,16 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpPut]
-        [Route("update/{id}/{name}/{price}/{category}")]
-        public Task<ProductCommandResult> UpdateProduct([FromRoute] string id, string name, decimal price, string category)
+        [Route("update/{id}/{name}/{price}/{category}/{description}")]
+        public Task<ProductCommandResult> UpdateProduct([FromRoute] string id, string name, decimal price, string category, string description)
         {
             var request = new UpdateProductRequest()
             {
                 Id = id,
                 Name = name,
                 Price = price,
-                Category = category
+                Category = category,
+                Description = description
             };
 
             return _mediator.Send(request);
