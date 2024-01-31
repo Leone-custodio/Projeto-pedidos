@@ -35,8 +35,8 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
-builder.Services.AddTransient<CreateUserHandler, CreateUserHandler>();
-builder.Services.AddTransient<ProductHandler, ProductHandler>();
+//builder.Services.AddTransient<CreateUserHandler, CreateUserHandler>();
+//builder.Services.AddTransient<ProductHandler, ProductHandler>();
 
 
 builder.Services.AddCors(options =>

@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "Go7cfB2bZHG2iHIp/wk43eg/YidafwUyCU59xFZ96JJBWWqbfFi+hWdFiHIxvYZliUnSSS9abN98c7Jr1QDFaA==",
   "success": true,
-  "projectFilePath": "C:\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
+  "projectFilePath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leone\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

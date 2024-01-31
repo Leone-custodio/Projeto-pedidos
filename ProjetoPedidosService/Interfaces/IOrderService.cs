@@ -8,6 +8,7 @@ namespace ProjetoPedidosService.Interfaces
         OrderCommandResult InsertProductOrder(string id, string productId);
         OrderCommandResult RemoveProductOrder(string id, string productId);
         OrderCommandResult GetById(string id);
+        OrderCommandResult GetByUserCpf(string userCpf);
         OrderCommandResult GetAll();
         OrderCommandResult Delete(string id);
     }

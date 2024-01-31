@@ -128,5 +128,16 @@ namespace ProjetoPedidosService.Services
 
             return OrderCommandResult.Result(true, "ordem encontrada com sucesso", result);
         }
+
+        public OrderCommandResult GetByUserCpf(string userCpf)
+        {
+            var result = _repository.GetByUserCpf(userCpf);
+            if (result.Count == 0)
+            {
+                return OrderCommandResult.Result(false, "Não existem pedidos para este cpf", null);
+            }
+
+            return OrderCommandResult.ResultList(true, "Pedidos encontrados com sucesso", result);
+        }
     }
 }

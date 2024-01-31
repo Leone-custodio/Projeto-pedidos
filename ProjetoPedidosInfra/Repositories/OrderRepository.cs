@@ -36,6 +36,12 @@ namespace ProjetoPedidosInfra.Repositories
             return result;
         }
 
+        public List<Order> GetByUserCpf(string userCpf)
+        {
+            var result = _context.Orders.Find(x => x.UserCpf == userCpf).ToList();
+            return result;
+        }
+
         public Order Update(string id, Order order )
         {
             _context.Orders.ReplaceOne(x => x.Id == id, order);

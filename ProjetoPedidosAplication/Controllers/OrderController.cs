@@ -78,6 +78,17 @@ namespace ProjetoPedidosAplication.Controllers
         }
 
         [HttpGet]
+        [Route("getByUserCpf/{userCpf}")]
+        public async Task<OrderCommandResult> GetOrderByUserCpf([FromRoute] string userCpf)
+        {
+            var request = new GetOrdersByUserCpfRequest()
+            {
+                UserCpf = userCpf
+            };
+            return await _mediator.Send(request);
+        }
+
+        [HttpGet]
         [Route("getAllOrders")]
         public async Task<OrderCommandResult> GetAllOrders()
         {
