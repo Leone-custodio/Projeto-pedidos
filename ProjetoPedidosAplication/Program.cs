@@ -5,6 +5,7 @@ using ProjetoPedidosBusiness.Handlers.UserHandler;
 using ProjetoPedidosBusiness.Requests.OrderRequests;
 using ProjetoPedidosBusiness.Requests.ProductRequests;
 using ProjetoPedidosBusiness.Requests.UserRequests;
+using ProjetoPedidosBusiness.Rest;
 using ProjetoPedidosInfra.Data;
 using ProjetoPedidosInfra.Interfaces;
 using ProjetoPedidosInfra.Repositories;
@@ -35,8 +36,10 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
-//builder.Services.AddTransient<CreateUserHandler, CreateUserHandler>();
-//builder.Services.AddTransient<ProductHandler, ProductHandler>();
+builder.Services.AddSingleton<ICepService, CepService>();
+builder.Services.AddSingleton<IApiService, ApiRest>();
+
+builder.Services.AddAutoMapper(typeof(CepService));
 
 
 builder.Services.AddCors(options =>

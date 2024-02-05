@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Go7cfB2bZHG2iHIp/wk43eg/YidafwUyCU59xFZ96JJBWWqbfFi+hWdFiHIxvYZliUnSSS9abN98c7Jr1QDFaA==",
+  "dgSpecHash": "wEWT1SESTxE0421T72hTcS2tev19H3q3Wdlct3cnVCRIz8KuzrkDHUK2HhiB+uVAonVRpaQoXVkVVG0QhGtzJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Leone\\Projeto-pedidos\\ProjetoPedidosService\\ProjetoPedidosService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Leone\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
@@ -14,6 +15,7 @@
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\Leone\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.25\\microsoft.data.sqlite.core.6.0.25.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.25\\microsoft.entityframeworkcore.6.0.25.nupkg.sha512",
     "C:\\Users\\Leone\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.25\\microsoft.entityframeworkcore.abstractions.6.0.25.nupkg.sha512",
